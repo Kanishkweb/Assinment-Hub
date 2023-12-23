@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Toggle Text</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 id="heading">The most affordable learning platform</h1>
+    <button id="toggleButton">Toggle Text</button>
+
+    <script>
+      document
+        .getElementById("toggleButton")
+        .addEventListener("click", function () {
+          let heading = document.getElementById("heading");
+          if (heading.textContent === "The most affordable learning platform") {
+            heading.textContent = "PW Skills";
+          } else {
+            heading.textContent = "The most affordable learning platform";
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="todo-container">
+      <h1>Todo List</h1>
+      <input type="text" id="todoInput" placeholder="Enter a todo" />
+      <button onclick="addTodo()">Add</button>
+      <ul id="todoList"></ul>
+    </div>
+
+    <script>
+      function addTodo() {
+        let todoInput = document.getElementById("todoInput");
+        let todoList = document.getElementById("todoList");
+
+        if (todoInput.value.trim() !== "") {
+          let li = document.createElement("li");
+          li.textContent = todoInput.value;
+          todoList.appendChild(li);
+          todoInput.value = "";
+        } else {
+          alert("Please enter a todo!");
+        }
+      }
+    </script>
+  </body>
+</html>

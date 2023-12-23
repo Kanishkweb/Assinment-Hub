@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Text Highlighting</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+  <body>
+    <p id="paragraph">
+      This is a sample paragraph with words of varying lengths to demonstrate
+      text highlighting.
+    </p>
+
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      const words = paragraph.innerText.split(" ");
+
+      for (let i = 0; i < words.length; i++) {
+        if (words[i].length > 8) {
+          words[i] = `<span class="highlight">${words[i]}</span>`;
+        }
+      }
+
+      paragraph.innerHTML = words.join(" ");
+    </script>
+  </body>
+</html>

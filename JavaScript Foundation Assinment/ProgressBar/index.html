@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Scroll Progress Bar</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .progress-container {
+        width: 100%;
+        height: 5px;
+        background-color: #f0f0f0;
+      }
+
+      .progress-bar {
+        height: 100%;
+        background-color: #3498db;
+        width: 0%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Your content here -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        const winScroll =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById("progressBar").style.width = scrolled + "%";
+      });
+    </script>
+  </body>
+</html>
